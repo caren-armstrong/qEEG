@@ -1,8 +1,8 @@
 Hello--before you use eegpipeline_v2.4CA.m, here are some orienting instructions:
 
 Note that you will need to begin with a .mat file of each EEG you want,
-created either using startEXAMPLE.m (you can use if starting with an .edf) 
-OR otherwise generating the following variables (saved as '*'.mat where '*' is what you define 'file' below):
+created either using startEXAMPLE.m (you can use this if starting with an .edf) 
+OR otherwise generating the following variables (saved as '*'.mat where '*' is what you define as 'file' in (4) below):
 (1) eeg: your EEG data with each row being a channel and each column being sample
 (2) ecg: your EKG data with one row and each column being a sample (check line 26 of startEXAMPLE.m)
 (3) Fs: the sampling frequency in Hz (#samples per second)
@@ -12,7 +12,7 @@ Before running the eegpipeline program with your .mat files:
 (5) confirm that you are using EEG taken using a standard 10-20 system 
 (or that you can convert your data to 10-20 in the rereference function)
 (6) have more than one EEG to analyze 
-(if you do not have more than one, load your .mat file, uncomment line 43 of the pipeline, & run just that section of the code)
+--(if you do not have more than one EEG to analyze, load your .mat file, uncomment line 43 of the pipeline, & run just that section of the code)
 (7) check that the channel index for the ecg in line 26 of startEXAMPLE.m was correct in identifying the EKG channels
 (8) check that the channel labels/column numbers in lines 18-58 of the rereferenceEXAMPLE.m function are correct based on 
 the info.label information found in your EEG after running startEXAMPLE.m (more information follows below)
@@ -21,7 +21,7 @@ an object called 'patient' which contains analyzed data including matrices of am
 the sampling rate, channel labels, and the amount of time kept. 
 These matrices in 'patient' will exist for both bipolar and laplacian montages. 
 The file will also contain the raw eeg and ecg data with rejected segments cut out.
-See code/bottom of this readme for information on the interpretation of the rows, columns, and depth of each matrix. 
+See the code/bottom of this readme for information on the interpretation of the rows, columns, and depth of each matrix. 
 
 More information on point 8 above:
 When running this pipeline, you must be careful that your info.label data match the rereference function you are using:
@@ -37,6 +37,7 @@ making one new function for each different info.label data 'source'
 (replace/duplicate "alternate_rereference" as needed)
 (3) run the pipeline once for each 'source,' selecting only the .mat files corresponding to the rereference function you enter 
 with each run
+
 
 OUTPUT format information:
 -----
