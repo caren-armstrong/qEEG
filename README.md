@@ -1,2 +1,2 @@
 # qEEG
-qEEG MATLAB code for analysis of scalp EEG
+this MATLAB based code is the pipeline used for analysis of scalp EEG in patients before and after CBD initiation in Armstrong et al., 2022
